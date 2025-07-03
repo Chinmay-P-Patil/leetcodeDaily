@@ -1,25 +1,18 @@
 import java.util.*;
 
 public class issubsequence {
-    public static void main(String[] args){
-        String s ="acb", t="ahbgdc";
+    public static void main(String[] args) {
+        String s = "acb", t = "ahbgdc";
 
-        int count =0;
-
-        char[] a = s.toCharArray();
-        char[] b = t.toCharArray();
-        
-        
-            for(int i =0;i<a.length;i++){
-                for(int j = 0; j<b.length;j++){
-                    if(b[j] == a[i]){
-                        count++;
-                    }
-                }
+        int i = 0; // Pointer for s
+        for (int j = 0; j < t.length() && i < s.length(); j++) {
+            if (t.charAt(j) == s.charAt(i)) {
+                i++;
             }
-        if(count == a.length){
+        }
+        if (i == s.length()) {
             System.out.println("true");
-        }else{
+        } else {
             System.out.println("false");
         }
     }
